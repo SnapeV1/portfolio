@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/media.css" />
+
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
@@ -16,7 +18,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-
+  
   <body>
     <header id="header" class="header">
       <div class="container container-lg">
@@ -217,7 +219,42 @@
                 <span class="skill-tag">Firebase</span>
               </div>
             </div>
-        
+            <div class="skills-charts" id="skills">
+       
+              <div id="myCanvasContainer">
+                <canvas width="500" height="500" id="myCanvas">
+                  <ul id="tags">
+                    <li><a href="#" target="_blank">Java (+Spring boot)</a></li>
+                    <li><a href="#" target="_blank">C</a></li>
+                    <li><a href="#" target="_blank">C++</a></li>
+                    <li><a href="#" target="_blank">C#</a></li>
+                    <li><a href="#" target="_blank">Python</a></li>
+                    <li><a href="#" target="_blank">PHP (+Symfony)</a></li>
+                    <li><a href="#" target="_blank">JavaScript (+TypeScript)</a></li>
+                    <li><a href="#" target="_blank">Angular</a></li>
+                    <li><a href="#" target="_blank">SQL</a></li>
+                    <li><a href="#" target="_blank">Big SQL</a></li>
+                    <li><a href="#" target="_blank">DB2</a></li>
+                    <li><a href="#" target="_blank">HTML</a></li>
+                    <li><a href="#" target="_blank">CSS</a></li>
+                    <li><a href="#" target="_blank">.NET</a></li>
+                    <li><a href="#" target="_blank">REST</a></li>
+                    <li><a href="#" target="_blank">Windows (Windows PowerShell)</a></li>
+                    <li><a href="#" target="_blank">Ubuntu (Bash)</a></li>
+                    <li><a href="#" target="_blank">Kali Linux</a></li>
+                    <li><a href="#" target="_blank">VirtualBox</a></li>
+                    <li><a href="#" target="_blank">Visual Studio</a></li>
+                    <li><a href="#" target="_blank">Android Studio</a></li>
+                    <li><a href="#" target="_blank">PyCharm</a></li>
+                    <li><a href="#" target="_blank">Proteus8 (Electric Design)</a></li>
+                    <li><a href="#" target="_blank">Anaconda (ML)</a></li>
+                    <li><a href="#" target="_blank">GitHub Git</a></li>
+                    <li><a href="#" target="_blank">MySQL Workbench</a></li>
+                </ul>
+                
+                </canvas>
+              </div>
+            </div>
             <!-- Databases -->
             <div class="skill-category">
               <div class="category-title">Databases</div>
@@ -270,42 +307,7 @@
           </div>
         </div>
         
-        <div class="skills-charts" id="skills">
-       
-          <div id="myCanvasContainer">
-            <canvas width="500" height="500" id="myCanvas">
-              <ul id="tags">
-                <li><a href="#" target="_blank">Java (+Spring boot)</a></li>
-                <li><a href="#" target="_blank">C</a></li>
-                <li><a href="#" target="_blank">C++</a></li>
-                <li><a href="#" target="_blank">C#</a></li>
-                <li><a href="#" target="_blank">Python</a></li>
-                <li><a href="#" target="_blank">PHP (+Symfony)</a></li>
-                <li><a href="#" target="_blank">JavaScript (+TypeScript)</a></li>
-                <li><a href="#" target="_blank">Angular</a></li>
-                <li><a href="#" target="_blank">SQL</a></li>
-                <li><a href="#" target="_blank">Big SQL</a></li>
-                <li><a href="#" target="_blank">DB2</a></li>
-                <li><a href="#" target="_blank">HTML</a></li>
-                <li><a href="#" target="_blank">CSS</a></li>
-                <li><a href="#" target="_blank">.NET</a></li>
-                <li><a href="#" target="_blank">REST</a></li>
-                <li><a href="#" target="_blank">Windows (Windows PowerShell)</a></li>
-                <li><a href="#" target="_blank">Ubuntu (Bash)</a></li>
-                <li><a href="#" target="_blank">Kali Linux</a></li>
-                <li><a href="#" target="_blank">VirtualBox</a></li>
-                <li><a href="#" target="_blank">Visual Studio</a></li>
-                <li><a href="#" target="_blank">Android Studio</a></li>
-                <li><a href="#" target="_blank">PyCharm</a></li>
-                <li><a href="#" target="_blank">Proteus8 (Electric Design)</a></li>
-                <li><a href="#" target="_blank">Anaconda (ML)</a></li>
-                <li><a href="#" target="_blank">GitHub Git</a></li>
-                <li><a href="#" target="_blank">MySQL Workbench</a></li>
-            </ul>
-            
-            </canvas>
-          </div>
-        </div>
+        
 
 
       <div class="services-row">
@@ -630,50 +632,19 @@
     ></script>
     <script type="module" src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script> 
-    document.addEventListener("DOMContentLoaded", function() {
-        var options = {
-            strings: ["Software Engineer", "Web Developer", "Computer Science Student"], 
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 2000,
-            startDelay: 500,
-            loop: true
-        };
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.tagcanvas.js"></script>
+ 
 
-        var typed = new Typed("#typed-text", options);
-    });
-
-
-
-
-const soundCloud = document.querySelector('.sound-cloud');
-const off = document.querySelector('#off');
-const on = document.querySelector('#on');
-const myAudio = document.querySelector('#myAudio');
-
-off.addEventListener('click', () => soundTrack('off'));
-on.addEventListener('click', () => soundTrack('on'));
-
-const soundTrack = (soundState) => {
-  if (soundState === 'off') {
-    on.style.display = 'inline-block'; 
-    off.style.display = 'none';
-    soundCloud.style.color = '#08fdd8';
-    
-    myAudio.play().catch(error => console.log("Audio play error:", error));
-  } else if (soundState === 'on') {
-    on.style.display = 'none';
-    off.style.display = 'inline-block';
-    soundCloud.style.color = '#f50057';
-    
-    myAudio.pause();
-   
-  }
-};
-
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+></script>
+<script type="text/javascript">
+  (function(){
+     emailjs.init("Z1A2ugVLFrHA6e7Gc"); 
+  })();
 </script>
-
   </body>
   
 </html>

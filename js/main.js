@@ -99,3 +99,132 @@ prefersDarkScheme.addEventListener('change', (e) => {
     }
   }
 });
+$(document).ready(function () {
+  function initTagCanvas() {
+    // Get colors directly from the computed root style
+    const rootStyles = getComputedStyle(document.documentElement);
+    const textColor = rootStyles.getPropertyValue('--tag-text-color').trim() || '#ffffffff';
+    const bgColor = rootStyles.getPropertyValue('--tag-bg-color').trim() || '#000000ff';
+
+    // Destroy existing TagCanvas instance
+    if ($.fn.tagcanvas) {
+      $('#myCanvas').tagcanvas('destroy');
+    }
+
+    // Reinitialize TagCanvas with enhanced settings
+    if (
+      !$('#myCanvas').tagcanvas(
+        {
+          textColour: textColor,
+          outlineColour: 'transparent',
+          reverse: true,
+          depth: 0.05,
+          maxSpeed: 0.05,
+          weight: true,
+          shadow: 'transparent',
+          shadowBlur: 10,
+          shadowOffset: [5, 5],
+          bgColour:'transparent' ,
+          bgRadius: 10,
+          pinchZoom: true,
+          wheelZoom: true,
+          fadeIn: 2000,
+          initial: [0.1, -0.1],
+          shape: 'sphere',
+          lock: 'xy',
+          stretchX: 1,
+          stretchY: 1,
+          decel: 0.98,
+          noSelect: true,
+          noMouse: false,
+          freezeActive: true,
+          freezeDecel: true,
+          frontSelect: true,
+          tooltip: 'native',
+          tooltipDelay: 0,
+          tooltipClass: 'tagcanvas-tooltip',
+          tooltipNav: true,
+          tooltipPosition: 'top',
+          tooltipOffset: [0, 0],
+          tooltipOn: 'hover',
+          tooltipDelay: 0,
+          tooltipClass: 'tagcanvas-tooltip',
+          tooltipNav: true,
+          tooltipPosition: 'top',
+          tooltipOffset: [0, 0],
+          tooltipOn: 'hover',
+        },
+        'tags'
+      )
+    ) {
+      console.error("TagCanvas failed to initialize. Hiding container.");
+      $('#myCanvasContainer').hide();
+    }
+  }
+
+  // Initial load
+  initTagCanvas();
+
+  // Observe changes to the root element's class
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        initTagCanvas();
+      }
+    });
+  });
+
+  observer.observe(document.documentElement, { 
+    attributes: true, 
+    attributeFilter: ['data-theme'] 
+  });
+});
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var options = {
+      strings: ["Software Engineer", "Web Developer", "Computer Science Student"], 
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2000,
+      startDelay: 500,
+      loop: true
+  };
+
+  var typed = new Typed("#typed-text", options);
+});
+
+
+
+
+const soundCloud = document.querySelector('.sound-cloud');
+const off = document.querySelector('#off');
+const on = document.querySelector('#on');
+const myAudio = document.querySelector('#myAudio');
+
+off.addEventListener('click', () => soundTrack('off'));
+on.addEventListener('click', () => soundTrack('on'));
+
+const soundTrack = (soundState) => {
+if (soundState === 'off') {
+on.style.display = 'inline-block'; 
+off.style.display = 'none';
+soundCloud.style.color = '#08fdd8';
+
+myAudio.play().catch(error => console.log("Audio play error:", error));
+} else if (soundState === 'on') {
+on.style.display = 'none';
+off.style.display = 'inline-block';
+soundCloud.style.color = '#f50057';
+
+myAudio.pause();
+
+}
+};

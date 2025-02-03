@@ -72,7 +72,10 @@ html {
   --link-hover: var(--primary-blue-dark);
 
   --readme-hover:var(--primary-blue);
+  --tag-text-color:var(--primary-blue);
+
 }
+
 
 /* Common styles */
 html {
@@ -1044,7 +1047,7 @@ textarea:focus {
   /* Dark Mode - Core Colors */
   --primary-red: #e11d48;
   --primary-red-dark: #be123c;
-  --primary-red-light: #fecdd3;
+  --primary-red-light: #fefefe;
   --neutral-black: #090909;
   --neutral-gray-950: #030712;
   --neutral-gray-900: #111827;
@@ -1105,9 +1108,9 @@ textarea:focus {
   /* Links */
   --link-color: var(--primary-red-light);
   --link-hover: var(--primary-red);
-  
+  --tag-text-color:var(--white-color);
   --readme-hover:var(--primary-red);
-
+  
   /* Additional Dark Mode Specifics */
   --social-icon-filter: invert(1);
   --bg-gradient-start: #0f1628;
@@ -1124,6 +1127,8 @@ textarea:focus {
     145deg,
     var(--bg-gradient-start) 0%,
     var(--bg-gradient-end) 100%
+
+    
   );
 
   .skill-card {
@@ -1273,3 +1278,4 @@ body {
 .btns-container .fas:nth-child(2) {
   display: none;
 }
+
