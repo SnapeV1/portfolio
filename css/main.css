@@ -57,12 +57,12 @@ html {
   /* Cards & Components */
   --service-card-bg: var(--neutral-white);
   --service-card-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  --category-bg: var(--neutral-white);
+  --category-bg: var(--neutral-gray-100);
   --skill-tag-bg: var(--primary-blue-light);
   --skill-tag-text: var(--primary-blue);
   
   /* Forms & Inputs */
-  --input-bg: var(--neutral-white);
+  --input-bg: var(--neutral-gray-100);
   --input-text: var(--neutral-gray-800);
   --input-border: var(--neutral-gray-200);
   --input-focus-border: var(--primary-blue);
@@ -159,22 +159,6 @@ body {
   background-color: #3c4446;
 }
 
-.btn-red {
-  background: var(--secondary-accent);
-  border: 2px solid var(--secondary-accent);
-  color: var(--white-color);
-
-}
-
-.btn-red:hover,
-.btn-red:focus {
-  background: var(--primary-accent);
-  border: 2px solid var(--primary-accent);
-}
-
-.btn-red:active {
-  background-color: #3c4446;
-}
 
 h5 {
   font-size: 15px;
@@ -264,7 +248,7 @@ h5 {
 /* Hero section */
 .hero {
   position: relative;
-  padding-top: 180px;
+  padding-top: 0px;
   background-color: var(--hero-bg); 
   
 }
@@ -623,6 +607,7 @@ textarea:focus {
 }
 .contact-button button {
   border-radius: 10px
+
 }
 
 /* Footer */
