@@ -56,8 +56,22 @@
               />
             </button>
           </nav>
+          <div id="sound">
+            <audio id="myAudio" preload="auto">
+              <source src="./Night.mp3" type="audio/mpeg"/>
+            </audio>
+            <i class="fab fa-soundcloud sound-cloud"></i>
+            <span>Sound</span>
+            <div class="on-off">
+              <span id="off">OFF</span>
+              <span id="on">On</span>
+            </div>
+          </div>
+        
         </div>
+        
       </div>
+ 
     </header>
 
     <section id="home" class="hero">
@@ -71,10 +85,9 @@
         >
           <div class="hero-content">
             <span class="hero-greeting"> Hello, I am</span>
-            <h1 class="hero-heading">Amine Ibenhamada</h1>
-            <span class="hero-heading-subtitle"
-              >Web & Software Developer</span
-            >
+            <h1 class="hero-heading">Amine</h1>
+            <span class="hero-heading-subtitle" id="typed-text"></span>
+
             <div class="about-social-list">
               <div class="social-links-row">
                 <a href="https://github.com/SnapeV1" target="_blank">
@@ -91,10 +104,10 @@
                   />
                 </a>
 
-                <a href="#!" target="_blank">
+                <a href="https://www.xing.com/profile/Amine_IbenHamada/" target="_blank">
                   <img
                     src="img/social_icons/xing.svg"
-                    alt="Link to Xing profile"
+                    alt="https://www.xing.com/profile/Amine_IbenHamada/"
                   />
                 </a>
 
@@ -257,6 +270,44 @@
           </div>
         </div>
         
+        <div class="skills-charts" id="skills">
+       
+          <div id="myCanvasContainer">
+            <canvas width="500" height="500" id="myCanvas">
+              <ul id="tags">
+                <li><a href="#" target="_blank">Java (+Spring boot)</a></li>
+                <li><a href="#" target="_blank">C</a></li>
+                <li><a href="#" target="_blank">C++</a></li>
+                <li><a href="#" target="_blank">C#</a></li>
+                <li><a href="#" target="_blank">Python</a></li>
+                <li><a href="#" target="_blank">PHP (+Symfony)</a></li>
+                <li><a href="#" target="_blank">JavaScript (+TypeScript)</a></li>
+                <li><a href="#" target="_blank">Angular</a></li>
+                <li><a href="#" target="_blank">SQL</a></li>
+                <li><a href="#" target="_blank">Big SQL</a></li>
+                <li><a href="#" target="_blank">DB2</a></li>
+                <li><a href="#" target="_blank">HTML</a></li>
+                <li><a href="#" target="_blank">CSS</a></li>
+                <li><a href="#" target="_blank">.NET</a></li>
+                <li><a href="#" target="_blank">REST</a></li>
+                <li><a href="#" target="_blank">Windows (Windows PowerShell)</a></li>
+                <li><a href="#" target="_blank">Ubuntu (Bash)</a></li>
+                <li><a href="#" target="_blank">Kali Linux</a></li>
+                <li><a href="#" target="_blank">VirtualBox</a></li>
+                <li><a href="#" target="_blank">Visual Studio</a></li>
+                <li><a href="#" target="_blank">Android Studio</a></li>
+                <li><a href="#" target="_blank">PyCharm</a></li>
+                <li><a href="#" target="_blank">Proteus8 (Electric Design)</a></li>
+                <li><a href="#" target="_blank">Anaconda (ML)</a></li>
+                <li><a href="#" target="_blank">GitHub Git</a></li>
+                <li><a href="#" target="_blank">MySQL Workbench</a></li>
+            </ul>
+            
+            </canvas>
+          </div>
+        </div>
+
+
       <div class="services-row">
         <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
           <img class="service-card-img" src="img/services/01.svg" alt="" />
@@ -317,7 +368,7 @@
         <div class="blog-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
           <img src="img/works/VitaNova.jpg" alt="VitaNova" class="blog-image" />
           <div class="blog-content">
-            <div class="blog-date">December 2023</div>
+            <div class="blog-date">November 2024</div>
             <span class="blog-category">Website</span>
             <span class="blog-category">Springboot</span>
             <span class="blog-category">Angular</span>
@@ -327,7 +378,7 @@
             <p class="blog-excerpt">
               VitaNova is a revolutionary wellness platform designed to address the gaps in existing national health and wellness offerings. Built using Angular and Spring frameworks, VitaNova provides a comprehensive suite of features aimed at improving user health, fitness, and overall well-being.
             </p>
-            <a href="https://github.com/SnapeV1/VitaNovaFrontEnd" class="read-more">
+            <a href="https://github.com/SnapeV1/VitaNovaFrontEnd" class="read-more" target="_blank">
               Read More
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -385,7 +436,7 @@
     <section id="projects" class="projects">
       <div class="container container-lg">
         <div class="projects-title">
-          <h2 class="title">Works</h2>
+          <h2 class="title">More</h2>
         </div>
 
         <div class="projects-row">
@@ -412,12 +463,12 @@
             data-aos-delay="300"
             data-aos-duration="1000"
           >
-            <a href="#!">
-              <img class="project-img" src="img/works/02.jpg" alt="" />
+            <a href="https://github.com/SnapeV1/SimpleKeyLogger" target="_blank">
+              <img class="project-img" src="img/works/keylogger2.jpg" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">Product design</h5>
-                  <p class="white">UI/UX Design</p>
+                  <h5 class="white">KeyLogger</h5>
+                  <p class="white">Software</p>
                 </div>
               </div>
             </a>
@@ -429,12 +480,12 @@
             data-aos-delay="600"
             data-aos-duration="1000"
           >
-            <a href="#!">
-              <img class="project-img" src="img/works/03.jpg" alt="" />
+            <a href="https://github.com/SnapeV1/Malware">
+              <img class="project-img" src="img/works/voldemort.jpg" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">Landing Page</h5>
-                  <p class="white">UI/UX Design, Web Development</p>
+                  <h5 class="white">voldemort</h5>
+                  <p class="white">Python script For fun</p>
                 </div>
               </div>
             </a>
@@ -446,7 +497,7 @@
             data-aos-delay="900"
             data-aos-duration="1000"
           >
-            <a href="#!">
+            <a href="https://github.com/SnapeV1/portfolio.git" target="_blank">
               <img class="project-img" src="img/works/04.jpg" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
@@ -510,36 +561,17 @@
         <form class="contactForm" data-aos="zoom-in" data-aos-duration="1000">
           <div class="input-box">
             <input type="text" name="name" placeholder="Name" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-            />
+            <input type="email" name="email" placeholder="Email Address" required />
           </div>
-
-          <textarea
-            name="message"
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Your Message"
-            required
-          ></textarea>
-          <div
-            class="contact-button"
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-out"
-            data-aos-delay="500"
-            data-aos-duration="1000"
-          >
-            <button href="#!" class="btn btn-red" name="submit" type="submit">
-              Send Message
-            </button>
+        
+          <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        
+          <div class="contact-button" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-delay="500" data-aos-duration="1000">
+            <button class="btn btn-red" name="submit" type="submit">Send Message</button>
           </div>
         </form>
+        
         <div class="response"></div>
-      </div>
     </section>
 
     <footer class="footer">
@@ -597,5 +629,51 @@
       referrerpolicy="no-referrer"
     ></script>
     <script type="module" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script> 
+    document.addEventListener("DOMContentLoaded", function() {
+        var options = {
+            strings: ["Software Engineer", "Web Developer", "Computer Science Student"], 
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            startDelay: 500,
+            loop: true
+        };
+
+        var typed = new Typed("#typed-text", options);
+    });
+
+
+
+
+const soundCloud = document.querySelector('.sound-cloud');
+const off = document.querySelector('#off');
+const on = document.querySelector('#on');
+const myAudio = document.querySelector('#myAudio');
+
+off.addEventListener('click', () => soundTrack('off'));
+on.addEventListener('click', () => soundTrack('on'));
+
+const soundTrack = (soundState) => {
+  if (soundState === 'off') {
+    on.style.display = 'inline-block'; 
+    off.style.display = 'none';
+    soundCloud.style.color = '#08fdd8';
+    
+    myAudio.play().catch(error => console.log("Audio play error:", error));
+  } else if (soundState === 'on') {
+    on.style.display = 'none';
+    off.style.display = 'inline-block';
+    soundCloud.style.color = '#f50057';
+    
+    myAudio.pause();
+   
+  }
+};
+
+</script>
+
   </body>
+  
 </html>

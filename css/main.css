@@ -1119,7 +1119,7 @@ textarea:focus {
 
   /* Additional Dark Mode Specifics */
   --social-icon-filter: invert(1);
-  --bg-gradient-start: #0f172a;
+  --bg-gradient-start: #0f1628;
   --bg-gradient-end: #1e293b;
   --card-bg: #1e293b;
   --card-border: #334155;
@@ -1258,3 +1258,32 @@ body {
   filter: invert(1);
 }
 
+#sound {
+  padding: 7px;
+  background-color: var(--neutral-black);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+ 
+}
+.sound-cloud {
+  font-size: 1.2rem;
+  margin: 7px;
+  color: #f50057;
+}
+.on-off {
+  cursor: pointer;
+  margin-left: 5px;
+}
+#off {
+  color: #f50057;
+}
+#on {
+  display: none;
+  color: #08fdd8;
+}
+
+.btns-container .fas:nth-child(2) {
+  display: none;
+}
