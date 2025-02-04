@@ -279,10 +279,9 @@ h5 {
 .hero-content {
   text-align: left;
   align-self: center;
-  padding: 200px;
+
   flex-grow: 1;
   margin-left: 10%;
-  
 }
 
 .hero-greeting {
@@ -291,7 +290,6 @@ h5 {
   text-transform: uppercase;
   letter-spacing: 3px;
   color: var(--secondary-accent);
-
 }
 
 .hero-heading {
@@ -299,7 +297,6 @@ h5 {
   font-weight: 500;
   font-size: clamp(3.25rem, 2.75rem + 2.5vw, 5rem);
   line-height: 1.2;
-  
 }
 
 .hero-heading-subtitle {
@@ -318,9 +315,9 @@ h5 {
 .hero-img img {
   display: block;
   position: relative;
-  max-width: 100%;  
+  max-width: 99.1%;  
   transition: transform 0.3s ease;  
-  border-radius: 2.1px;  
+  border-radius: 2px;  
   left: 16px;
 }
 
