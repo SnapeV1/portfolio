@@ -77,6 +77,21 @@ html {
   --readme-hover:var(--primary-blue);
   --tag-text-color:var(--primary-blue);
 
+
+  --library-primary: #6C5B7B;
+  --library-primary-dark: #4A3F58;
+  --library-secondary: #C06C84;
+  --library-secondary-dark: #894B60;
+  --library-background: #F8EDEB;
+  --library-text: #333;
+  --library-text-light: #FAFAFA;
+  --library-input-bg: #FFF;
+  --library-shadow-light: rgba(0, 0, 0, 0.1);
+  --library-shadow-medium: rgba(0, 0, 0, 0.2);
+  --library-shadow-dark: rgba(0, 0, 0, 0.3);
+  --library-shadow-darker: rgba(0, 0, 0, 0.4);
+  --library-overlay: rgba(0, 0, 0, 0.5);
+  --library-modal-bg: #FFF;
 }
 
 
@@ -266,6 +281,7 @@ h5 {
   align-self: center;
   padding: 20px;
   flex-grow: 1;
+  margin-left: 10%;
 }
 
 .hero-greeting {
@@ -1138,10 +1154,27 @@ textarea:focus {
   --accent-red-hover: #be123c;
   --blog-card:var(--neutral-gray-900);
   --bg-color: var(--bg-gradient-start);
+  --library-primary: #a05a2c;
+  --library-primary-dark: #7a4522;
+  --library-secondary: #8b5e3c;
+  --library-secondary-dark: #614027;
+  --library-text: #e8dccf;
+  --library-text-light: rgba(255, 255, 255, 0.9);
+  --library-modal-bg: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+  --library-shadow-light: rgba(0, 0, 0, 0.2);
+  --library-shadow-medium: rgba(0, 0, 0, 0.3);
+  --library-shadow-dark: rgba(0, 0, 0, 0.4);
+  --library-shadow-darker: rgba(0, 0, 0, 0.5);
+  --library-overlay: rgba(0, 0, 0, 0.9);
+  --library-input-bg: rgba(0, 0, 0, 0.2);
+
   background: linear-gradient(
     145deg,
     var(--bg-gradient-start) 0%,
     var(--bg-gradient-end) 100%
+
+    
+
 
     
   );
