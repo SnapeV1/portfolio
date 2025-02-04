@@ -5,6 +5,7 @@ html {
 }
 :root {
   /* Light Mode - Core Colors */
+  
   --primary-blue: #246CD1;
   --button-text:var(--neutral-white);
   --primary-blue-dark: #1a4f9c;
@@ -17,6 +18,8 @@ html {
   --neutral-gray-600: #475569;
   --neutral-gray-700: #334155;
   --neutral-gray-800: #1e293b;
+  --downloadCVButton:white;
+  --downloadCVButtonbg:#4585ed;
   --blog-card:var(--neutral-gray-100);
   --button-hover-bg:var(--primary-blue);
   /* Light Mode - Semantic Colors */
@@ -287,14 +290,40 @@ h5 {
 
 .hero-img {
   display: flex;
-  flex: 1 1 356px;
+  flex: 1 1 320px; 
   justify-content: flex-end;
   margin-top: auto;
+  position: relative;
 }
 
 .hero-img img {
   display: block;
   position: relative;
+  max-width: 95%;  
+  transition: transform 0.3s ease;  
+  border-radius: 2px;  
+  left: 16px;
+}
+
+
+.hero-img img:hover {
+  transform: translateY(-5px);  
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-img {
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 .about-social-list {
@@ -1041,7 +1070,8 @@ textarea:focus {
   --neutral-gray-300: #d1d5db;
   --neutral-gray-200: #e5e7eb;
   --button-hover-bg:var(--accent-red-hover);
-
+  --downloadCVButton:#0f1628;
+  --downloadCVButtonbg:var(--accent-red);
   /* Dark Mode - Semantic Colors */
   --bg-color: var(--neutral-black);
   --text-color: var(--neutral-gray-200);
@@ -1187,8 +1217,8 @@ body {
 }
 
 .btn {
-  background-color: var(--btn-bg);
-  color: var(--btn-text);
+  background-color: transparent;
+  color: var(--text-color);
 }
 
 .btn-white {
@@ -1200,7 +1230,9 @@ body {
 .social-links-row img {
   filter: var(--social-icon-filter);
 }
-
+.footer-social img{
+  --social-icon-filter: invert(0.8);
+}
 /* Theme toggle button styles */
 .theme-toggle {
   background: none;
@@ -1262,5 +1294,130 @@ body {
 
 .btns-container .fas:nth-child(2) {
   display: none;
+}
+
+
+
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--about-bg);
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+  text-decoration: none;
+  display: inline-block;
+
+  
+}
+
+.button::before,
+.button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7D8082;
+  transition: all .15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-color);
+  background-color: var(--downloadCVButton);
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all .2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: var(--downloadCVButtonbg);
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
 }
 
