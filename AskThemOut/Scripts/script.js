@@ -47,11 +47,17 @@ createGif();
 yesBtn.addEventListener('click', () => {
     const celebrationContainer = document.getElementById('celebrationContainer');
     celebrationContainer.style.display = 'flex';
-    
-    for(let i = 0; i < 40; i++) {
+
+   
+    const audio = document.getElementById('background-music');
+    audio.muted = false;  
+    audio.play();         
+   
+    for (let i = 0; i < 40; i++) {
         createHeart();
     }
 });
+
 
 
 function createGif() {
