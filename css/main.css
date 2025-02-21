@@ -1454,3 +1454,6 @@ body {
   background-color: #fff;
 }
 
+a[href="/portfolio/AskThemOut"] {
+  color: white !important;
+}
