@@ -239,11 +239,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const loverName = loverNameInput.value.trim();
     if (loverName) {
-      window.location.href = `/portfolio/AskThemOut?name=${encodeURIComponent(loverName)}`;
+        const url = `/portfolio/AskThemOut?name=${encodeURIComponent(loverName)}`;
+
+        // Copy the URL to the clipboard
+        navigator.clipboard.writeText(window.location.origin + url)
+            .then(() => {
+                alert('Link copied to clipboard! Now redirecting...');
+                window.location.href = url; // Redirect after copying
+            })
+            .catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Could not copy the link, but redirecting anyway.');
+                window.location.href = url; // Redirect even if copy fails
+            });
+
     } else {
-      alert('Please enter a name!'); 
+        alert('Please enter a name!'); 
     }
-  });
+});
+
 
   namePopup.addEventListener('click', (e) => {
     if (e.target === namePopup) {
