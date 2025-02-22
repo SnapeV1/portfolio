@@ -234,27 +234,57 @@ document.addEventListener('DOMContentLoaded', () => {
     namePopup.classList.remove('hidden'); 
   });
 
-  nameForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); 
+  nameForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
     const loverName = loverNameInput.value.trim();
     if (loverName) {
         const url = `${window.location.origin}/portfolio/AskThemOut?name=${encodeURIComponent(loverName)}`;
 
-        // Ask the user to confirm before copying (Trusted event)
-        if (confirm("Do you want to copy the link before being redirected?")) {
+        // Remove any existing container (to avoid duplicates)
+        const existingContainer = document.getElementById("copyContainer");
+        if (existingContainer) existingContainer.remove();
+
+        // Create a container for the link + icon
+        const copyContainer = document.createElement("div");
+        copyContainer.id = "copyContainer";
+        copyContainer.style.display = "flex";
+        copyContainer.style.alignItems = "center";
+        copyContainer.style.gap = "10px";
+        copyContainer.style.marginTop = "10px";
+
+        // Create the link element
+        const linkElement = document.createElement("span");
+        linkElement.textContent = url;
+        linkElement.style.fontSize = "14px";
+        linkElement.style.color = "#007bff";
+        linkElement.style.cursor = "pointer";
+
+        // Create the copy icon (📋)
+        const copyIcon = document.createElement("span");
+        copyIcon.innerHTML = "📋"; // Copy emoji
+        copyIcon.style.fontSize = "18px";
+        copyIcon.style.cursor = "pointer";
+
+        // Handle copy action when clicking the icon
+        copyIcon.addEventListener("click", async () => {
             try {
                 await navigator.clipboard.writeText(url);
-                alert('Link copied to clipboard! Redirecting now...');
+                alert("Link copied! Redirecting now...");
             } catch (err) {
-                console.error('Clipboard copy failed:', err);
-                alert('Could not copy the link, but redirecting anyway.');
+                console.error("Clipboard copy failed:", err);
+                alert("Could not copy, but redirecting anyway.");
             }
-        }
 
-        window.location.href = url; // Redirect after interaction
+            window.location.href = url; // Redirect after copying
+        });
+
+        // Append elements
+        copyContainer.appendChild(linkElement);
+        copyContainer.appendChild(copyIcon);
+        nameForm.appendChild(copyContainer);
     } else {
-        alert('Please enter a name!'); 
+        alert("Please enter a name!");
     }
 });
 
