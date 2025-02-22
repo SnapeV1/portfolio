@@ -229,55 +229,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const loverNameInput = document.getElementById('loverName');
 
   
+  askThemOutBtn.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    namePopup.classList.remove('hidden'); 
+  });
+
   nameForm.addEventListener('submit', (e) => {
     e.preventDefault(); 
-  
+
     const loverName = loverNameInput.value.trim();
     if (loverName) {
-      const url = `https://snapev1.github.io/portfolio/AskThemOut/?name=${encodeURIComponent(loverName)}`;
-  
-      // Function to copy text to clipboard
-      const copyToClipboard = (text) => {
-        return new Promise((resolve, reject) => {
-          if (navigator.clipboard) {
-            // Use Clipboard API if available
-            navigator.clipboard.writeText(text).then(resolve).catch(reject);
-          } else {
-            // Fallback to deprecated execCommand method
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            textarea.style.position = 'fixed'; // Avoid scrolling to bottom
-            document.body.appendChild(textarea);
-            textarea.select();
-            try {
-              const success = document.execCommand('copy');
-              document.body.removeChild(textarea);
-              if (success) {
-                resolve();
-              } else {
-                reject(new Error('Failed to copy text using execCommand'));
-              }
-            } catch (err) {
-              document.body.removeChild(textarea);
-              reject(err);
-            }
-          }
-        });
-      };
-  
-      // Copy the URL to the clipboard
-      copyToClipboard(url)
-        .then(() => {
-          alert('Link copied to clipboard!');
-          // Redirect to the new URL
-          window.location.href = url;
-        })
-        .catch((err) => {
-          console.error('Failed to copy link: ', err);
-          alert('Failed to copy link to clipboard. Please try again.');
-        });
+      window.location.href = `/portfolio/AskThemOut?name=${encodeURIComponent(loverName)}`;
     } else {
       alert('Please enter a name!'); 
+    }
+  });
+
+  namePopup.addEventListener('click', (e) => {
+    if (e.target === namePopup) {
+      namePopup.classList.add('hidden');
     }
   });
 });
