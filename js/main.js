@@ -48,9 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (top >= offset && top < offset + height) {
         navLinks.forEach((links) => {
           links.classList.remove("active");
-          document
-            .querySelector("header nav a[href*=" + id + "]")
-            .classList.add("active");
+        
+          const targetLink = document.querySelector(
+            "header nav a[href*=" + id + "]"
+          );
+          if (targetLink) {
+            targetLink.classList.add("active");
+          }
         });
       }
     });
@@ -241,11 +245,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loverName) {
         const url = `${window.location.origin}/portfolio/AskThemOut?name=${encodeURIComponent(loverName)}`;
 
-        // Remove any existing container (to avoid duplicates)
         const existingContainer = document.getElementById("copyContainer");
         if (existingContainer) existingContainer.remove();
 
-        // Create a container for the link + icon
         const copyContainer = document.createElement("div");
         copyContainer.id = "copyContainer";
         copyContainer.style.display = "flex";
@@ -253,32 +255,30 @@ document.addEventListener('DOMContentLoaded', () => {
         copyContainer.style.gap = "10px";
         copyContainer.style.marginTop = "10px";
 
-        // Create the link element
         const linkElement = document.createElement("span");
         linkElement.textContent = url;
         linkElement.style.fontSize = "14px";
         linkElement.style.color = "#007bff";
         linkElement.style.cursor = "pointer";
 
-        // Create the copy icon (📋)
+        
         const copyIcon = document.createElement("span");
-        copyIcon.innerHTML = "📋"; // Copy emoji
+        copyIcon.innerHTML = "📋"; 
+        linkElement.style.display = "none"; 
+
         copyIcon.style.fontSize = "18px";
         copyIcon.style.cursor = "pointer";
 
-        // Handle copy action when clicking the icon
         copyIcon.addEventListener("click", async () => {
             try {
                 await navigator.clipboard.writeText(url);
             } catch (err) {
                 console.error("Clipboard copy failed:", err);
-                alert("Could not copy, but redirecting anyway.");
             }
 
-            window.location.href = url; // Redirect after copying
+            window.location.href = url; 
         });
 
-        // Append elements
         copyContainer.appendChild(linkElement);
         copyContainer.appendChild(copyIcon);
         nameForm.appendChild(copyContainer);
