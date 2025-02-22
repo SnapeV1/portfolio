@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const checkButton = document.createElement("button");
         checkButton.textContent = "Check it Out";
-        checkButton.style.background = "#007bff";
+        checkButton.style.background = "#EC4899";
         checkButton.style.color = "#fff";
         checkButton.style.border = "none";
         checkButton.style.padding = "8px 12px";

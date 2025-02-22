@@ -20,11 +20,14 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
+
 const name = getQueryParam('name');
+
 
 if (name) {
     document.getElementById('namePlaceholder').textContent = name;
 } else {
+  
     document.getElementById('namePlaceholder').textContent = 'Cutie';
 }
 
@@ -47,7 +50,7 @@ noBtn.addEventListener('mouseover', () => {
     noBtn.style.left = randomX + 'px';
     noBtn.style.top = randomY + 'px';
 
-    yesBtnSize *= 1.3;
+    yesBtnSize *= 1.5;
     yesBtn.style.transform = `scale(${yesBtnSize})`;
 
     createGif();

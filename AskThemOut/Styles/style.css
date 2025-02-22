@@ -46,7 +46,48 @@ body {
     box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
     position: relative;
 }
+@media (max-width: 768px) {
+    .intro {
+        font-size: 1.5rem;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 
+    .question {
+        font-size: 2em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #yesBtn, #noBtn {
+        padding: 15px 30px;
+        font-size: 1.2em;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (max-width: 480px) {
+    .intro {
+        font-size: 1.2rem;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .question {
+        font-size: 1.5em;
+        margin-top: 5px;
+        margin-bottom: 5px;
+     
+    }
+
+    #yesBtn, #noBtn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
 #yesBtn:hover {
     background-color: #FF1493;
     transform: translateY(-2px);
@@ -189,7 +230,7 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
+    width: 250px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     overflow: visible;
@@ -211,7 +252,7 @@ body {
     text-align: center;
     color: rgb(241, 0, 0);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    font-size: 14px;
+    font-size: 18px;
     line-height: 20px;
 }
 
@@ -219,7 +260,7 @@ body {
     position: absolute;
     width: 100%;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     margin-top: 25px;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
@@ -262,6 +303,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: -200px; 
 }
 
 .cssload-main {
@@ -285,7 +327,7 @@ body {
     z-index: 1000;
     margin: 80px; 
     bottom: 50px;
-    left: 45%;
+    left: 47%;
 
   }
   
