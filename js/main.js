@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <path d="M16 4H20C20.5523 4 21 4.44772 21 5V21C21 21.5523 20.5523 22 20 22H5C4.44772 22 4 21.5523 4 21V5C4 4.44772 4.44772 4 5 4H9M9 2H15C15.5523 2 16 2.44772 16 3V5C16 5.55228 15.5523 6 15 6H9C8.44772 6 8 5.55228 8 5V3C8 2.44772 8.44772 2 9 2Z" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         `;
-        copyButton.type = "button"; // Prevent form submission
+        copyButton.type = "button"; 
         copyButton.style.background = "none";
         copyButton.style.border = "none";
         copyButton.style.cursor = "pointer";
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
         copyButton.style.justifyContent = "center";
         copyButton.style.transition = "background 0.3s ease";
 
-        // Add hover effect
+       
         copyButton.addEventListener("mouseenter", () => {
             copyButton.style.background = "#f0f0f0";
         });
@@ -284,11 +284,11 @@ document.addEventListener('DOMContentLoaded', () => {
             copyButton.style.background = "none";
         });
 
-        // Create a tooltip for "Link copied!" feedback
+       
         const tooltip = document.createElement("div");
         tooltip.textContent = "Link copied!";
         tooltip.style.position = "absolute";
-        tooltip.style.top = "-25px"; // Position above the button
+        tooltip.style.top = "-25px"; 
         tooltip.style.left = "50%";
         tooltip.style.transform = "translateX(-50%)";
         tooltip.style.backgroundColor = "#333";
@@ -298,20 +298,19 @@ document.addEventListener('DOMContentLoaded', () => {
         tooltip.style.fontSize = "12px";
         tooltip.style.opacity = "0";
         tooltip.style.transition = "opacity 0.3s ease";
-        tooltip.style.pointerEvents = "none"; // Ensure it doesn't interfere with clicks
+        tooltip.style.pointerEvents = "none"; 
         buttonContainer.appendChild(tooltip);
 
-        // Copy functionality
         copyButton.addEventListener("click", async () => {
             try {
                 await navigator.clipboard.writeText(url);
-                // Show the tooltip
+            
                 tooltip.style.opacity = "1";
                 tooltip.style.position = "absolute";
-                tooltip.style.top = "0"; // Adjust this value to move it higher or lower
-                tooltip.style.left = "60%"; // Center horizontally
+                tooltip.style.top = "0"; 
+                tooltip.style.left = "60%"; 
                 tooltip.style.transform = "translateX(-50%)";
-                // Hide the tooltip after 1.5 seconds
+              
                 setTimeout(() => {
                     tooltip.style.opacity = "0";
                 }, 1500);
