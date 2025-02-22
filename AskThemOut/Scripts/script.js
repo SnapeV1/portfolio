@@ -20,14 +20,11 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
-// Extract the name from the URL
 const name = getQueryParam('name');
 
-// Update the placeholder with the name
 if (name) {
     document.getElementById('namePlaceholder').textContent = name;
 } else {
-    // If no name is provided, you can set a default or handle it accordingly
     document.getElementById('namePlaceholder').textContent = 'Cutie';
 }
 
@@ -50,7 +47,7 @@ noBtn.addEventListener('mouseover', () => {
     noBtn.style.left = randomX + 'px';
     noBtn.style.top = randomY + 'px';
 
-    yesBtnSize *= 1.1;
+    yesBtnSize *= 1.3;
     yesBtn.style.transform = `scale(${yesBtnSize})`;
 
     createGif();
