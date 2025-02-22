@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const navBtn = document.querySelector("#nav-btn");
   const navBtnImg = document.querySelector("#nav-btn-img");
 
-  //Hamburger menu
   navBtn.onclick = () => {
     if (nav.classList.toggle("open")) {
       navBtnImg.src = "img/icons/close.svg";
@@ -61,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
 const themeToggle = document.getElementById('theme-toggle');
 const themeToggleIcon = document.getElementById('theme-toggle-icon');
 
-// Check for saved theme preference, otherwise use system preference
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 const currentTheme = localStorage.getItem('theme');
 
@@ -73,7 +71,6 @@ if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
   themeToggleIcon.src = 'img/icons/moon.svg';
 }
 
-// Theme toggle event listener
 themeToggle.addEventListener('click', () => {
   let theme = document.documentElement.getAttribute('data-theme');
   if (theme === 'light') {
@@ -87,7 +84,6 @@ themeToggle.addEventListener('click', () => {
   }
 });
 
-// Listen for system theme changes
 prefersDarkScheme.addEventListener('change', (e) => {
   if (!localStorage.getItem('theme')) {
     if (e.matches) {
@@ -101,17 +97,14 @@ prefersDarkScheme.addEventListener('change', (e) => {
 });
 $(document).ready(function () {
   function initTagCanvas() {
-    // Get colors directly from the computed root style
     const rootStyles = getComputedStyle(document.documentElement);
     const textColor = rootStyles.getPropertyValue('--tag-text-color').trim() || '#ffffffff';
     const bgColor = rootStyles.getPropertyValue('--tag-bg-color').trim() || '#000000ff';
 
-    // Destroy existing TagCanvas instance
     if ($.fn.tagcanvas) {
       $('#myCanvas').tagcanvas('destroy');
     }
 
-    // Reinitialize TagCanvas with enhanced settings
     if (
       !$('#myCanvas').tagcanvas(
         {
@@ -162,10 +155,8 @@ $(document).ready(function () {
     }
   }
 
-  // Initial load
   initTagCanvas();
 
-  // Observe changes to the root element's class
   const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
       if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
@@ -237,26 +228,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const nameForm = document.getElementById('nameForm');
   const loverNameInput = document.getElementById('loverName');
 
-  // Open the popup when the button is clicked
+  
   askThemOutBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent default link behavior
-    namePopup.classList.remove('hidden'); // Show the popup
+    e.preventDefault(); 
+    namePopup.classList.remove('hidden'); 
   });
 
-  // Handle form submission
   nameForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
 
     const loverName = loverNameInput.value.trim();
     if (loverName) {
-      // Redirect to the desired URL with the name as a query parameter
       window.location.href = `/portfolio/AskThemOut?name=${encodeURIComponent(loverName)}`;
     } else {
-      alert('Please enter a name!'); // Show an alert if the input is empty
+      alert('Please enter a name!'); 
     }
   });
 
-  // Close the popup when clicking outside the modal
   namePopup.addEventListener('click', (e) => {
     if (e.target === namePopup) {
       namePopup.classList.add('hidden');
