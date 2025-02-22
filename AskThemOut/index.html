@@ -3,25 +3,40 @@
 <head>
     <title>A Special Question</title>
     <link rel="stylesheet" href="Styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-    <!-- Background Audio -->
-    <audio id="background-music" autoplay loop>
+    <audio id="background-music" autoplay loop muted>
         <source src="Assets/romantic-saxophone-244539.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <div class="hearts" id="hearts"></div>
-    <div class="question">Will you go out with me? 💝</div>
+    <div class="container">
+        <div class="cssload-main">
+            <div class="cssload-heart">
+                <span class="cssload-heartL"></span>
+                <span class="cssload-heartR"></span>
+                <span class="cssload-square"></span>
+            </div>
+            <div class="cssload-shadow"></div>
+        </div>
+        <div class="intro">Hello <span id="namePlaceholder">[Name]</span>, i know this is random but </div>
+        <div class="question">Will you go out with me? 💝</div>
+    </div>
     <div class="buttons">
         <button id="yesBtn">Yes! 💖</button>
         <button id="noBtn">No 🥺</button>
     </div>
-    <script src="Scripts/script.js" defer></script>
-           
+
+
     <div class="celebration-container" id="celebrationContainer">
         <img src="Assets/happy.gif" alt="Celebration" class="celebration-gif">
         <div class="celebration-text">Thank you for saying YES! 💖💕💝</div>
+        <canvas id="confetti-canvas"></canvas>
     </div>
+
+    <script src="Scripts/script.js" defer></script>
 </body>
 </html>
