@@ -108,6 +108,7 @@ body {
 }
 
 .container {
+  
   padding: 0 1rem;
   max-width: 1200px;
   /* max-width: clamp(54.5rem, 38.125rem + 81.88vw, 120rem); */
@@ -1457,3 +1458,11 @@ body {
 a[href="/portfolio/AskThemOut"] {
   color: white !important;
 }
+.md\:w-3\/5 {
+
+  background-color: var(--blog-card);
+  color: var(--blog-text);
+ 
+
+}
+
