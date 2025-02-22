@@ -377,9 +377,13 @@
             </div>
             
             <div class="flex items-center gap-4">
-              <a href="/portfolio/AskThemOut" class="px-6 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors">
-                Ask Them Out
-              </a>
+              <a
+              href="#"
+              id="askThemOutBtn"
+              class="px-6 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors"
+            >
+              Ask Them Out
+            </a>
               <a href="https://github.com/SnapeV1/AskThemOut" target="_blank" rel="noopener noreferrer"
                  class="px-6 py-2 border border-pink-500 text-pink-500 rounded-full hover:bg-pink-50 transition-colors">
                 View Project
@@ -388,6 +392,26 @@
             
           </div>
 </div></div>  
+<div id="namePopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+    <h2 class="text-xl font-bold mb-4">Enter Their Name</h2>
+    <form id="nameForm">
+      <input
+        type="text"
+        id="loverName"
+        placeholder="Your lover's name"
+        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+        required
+      />
+      <button
+        type="submit"
+        class="mt-4 w-full px-6 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
       <div class="blog-grid">
         <!-- WifiQrCodeV1.0 Project -->
         <div class="blog-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">

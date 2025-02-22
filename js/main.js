@@ -229,3 +229,37 @@ myAudio.pause();
 }
 };
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const askThemOutBtn = document.getElementById('askThemOutBtn');
+  const namePopup = document.getElementById('namePopup');
+  const nameForm = document.getElementById('nameForm');
+  const loverNameInput = document.getElementById('loverName');
+
+  // Open the popup when the button is clicked
+  askThemOutBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent default link behavior
+    namePopup.classList.remove('hidden'); // Show the popup
+  });
+
+  // Handle form submission
+  nameForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    const loverName = loverNameInput.value.trim();
+    if (loverName) {
+      // Redirect to the desired URL with the name as a query parameter
+      window.location.href = `/portfolio/AskThemOut?name=${encodeURIComponent(loverName)}`;
+    } else {
+      alert('Please enter a name!'); // Show an alert if the input is empty
+    }
+  });
+
+  // Close the popup when clicking outside the modal
+  namePopup.addEventListener('click', (e) => {
+    if (e.target === namePopup) {
+      namePopup.classList.add('hidden');
+    }
+  });
+});

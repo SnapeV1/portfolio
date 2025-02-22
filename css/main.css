@@ -1466,3 +1466,27 @@ a[href="/portfolio/AskThemOut"] {
 
 }
 
+
+#namePopup {
+  z-index: 1000; 
+
+
+
+}
+
+#namePopup div {
+  animation: fadeIn 0.3s ease-in-out;
+  color: var(--blog-text);
+  background-color: var(--blog-card);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
