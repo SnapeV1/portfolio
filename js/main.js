@@ -270,7 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
         copyIcon.addEventListener("click", async () => {
             try {
                 await navigator.clipboard.writeText(url);
-                alert("Link copied! Redirecting now...");
             } catch (err) {
                 console.error("Clipboard copy failed:", err);
                 alert("Could not copy, but redirecting anyway.");
