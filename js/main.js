@@ -234,25 +234,25 @@ document.addEventListener('DOMContentLoaded', () => {
     namePopup.classList.remove('hidden'); 
   });
 
-  nameForm.addEventListener('submit', (e) => {
+  nameForm.addEventListener('submit', async (e) => {
     e.preventDefault(); 
 
     const loverName = loverNameInput.value.trim();
     if (loverName) {
-        const url = `/portfolio/AskThemOut?name=${encodeURIComponent(loverName)}`;
+        const url = `${window.location.origin}/portfolio/AskThemOut?name=${encodeURIComponent(loverName)}`;
 
-        // Copy the URL to the clipboard
-        navigator.clipboard.writeText(window.location.origin + url)
-            .then(() => {
-                alert('Link copied to clipboard! Now redirecting...');
-                window.location.href = url; // Redirect after copying
-            })
-            .catch(err => {
-                console.error('Failed to copy:', err);
+        // Ask the user to confirm before copying (Trusted event)
+        if (confirm("Do you want to copy the link before being redirected?")) {
+            try {
+                await navigator.clipboard.writeText(url);
+                alert('Link copied to clipboard! Redirecting now...');
+            } catch (err) {
+                console.error('Clipboard copy failed:', err);
                 alert('Could not copy the link, but redirecting anyway.');
-                window.location.href = url; // Redirect even if copy fails
-            });
+            }
+        }
 
+        window.location.href = url; // Redirect after interaction
     } else {
         alert('Please enter a name!'); 
     }
