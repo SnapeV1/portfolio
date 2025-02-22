@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (top >= offset && top < offset + height) {
         navLinks.forEach((links) => {
           links.classList.remove("active");
-        
           const targetLink = document.querySelector(
             "header nav a[href*=" + id + "]"
           );
@@ -245,43 +244,97 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loverName) {
         const url = `${window.location.origin}/portfolio/AskThemOut?name=${encodeURIComponent(loverName)}`;
 
-        const existingContainer = document.getElementById("copyContainer");
+        const existingContainer = document.getElementById("buttonContainer");
         if (existingContainer) existingContainer.remove();
 
-        const copyContainer = document.createElement("div");
-        copyContainer.id = "copyContainer";
-        copyContainer.style.display = "flex";
-        copyContainer.style.alignItems = "center";
-        copyContainer.style.gap = "10px";
-        copyContainer.style.marginTop = "10px";
+        const buttonContainer = document.createElement("div");
+        buttonContainer.id = "buttonContainer";
+        buttonContainer.style.display = "flex";
+        buttonContainer.style.gap = "10px";
+        buttonContainer.style.marginTop = "10px";
+        buttonContainer.style.position = "relative"; // For positioning the tooltip
 
         const linkElement = document.createElement("span");
         linkElement.textContent = url;
-        linkElement.style.fontSize = "14px";
-        linkElement.style.color = "#007bff";
-        linkElement.style.cursor = "pointer";
-
-        
-        const copyIcon = document.createElement("span");
-        copyIcon.innerHTML = "📋"; 
         linkElement.style.display = "none"; 
 
-        copyIcon.style.fontSize = "18px";
-        copyIcon.style.cursor = "pointer";
+        // Create a simple copy button with an icon
+        const copyButton = document.createElement("button");
+        copyButton.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4H20C20.5523 4 21 4.44772 21 5V21C21 21.5523 20.5523 22 20 22H5C4.44772 22 4 21.5523 4 21V5C4 4.44772 4.44772 4 5 4H9M9 2H15C15.5523 2 16 2.44772 16 3V5C16 5.55228 15.5523 6 15 6H9C8.44772 6 8 5.55228 8 5V3C8 2.44772 8.44772 2 9 2Z" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        `;
+        copyButton.type = "button"; // Prevent form submission
+        copyButton.style.background = "none";
+        copyButton.style.border = "none";
+        copyButton.style.cursor = "pointer";
+        copyButton.style.padding = "5px";
+        copyButton.style.borderRadius = "5px";
+        copyButton.style.display = "flex";
+        copyButton.style.alignItems = "center";
+        copyButton.style.justifyContent = "center";
+        copyButton.style.transition = "background 0.3s ease";
 
-        copyIcon.addEventListener("click", async () => {
+        // Add hover effect
+        copyButton.addEventListener("mouseenter", () => {
+            copyButton.style.background = "#f0f0f0";
+        });
+        copyButton.addEventListener("mouseleave", () => {
+            copyButton.style.background = "none";
+        });
+
+        // Create a tooltip for "Link copied!" feedback
+        const tooltip = document.createElement("div");
+        tooltip.textContent = "Link copied!";
+        tooltip.style.position = "absolute";
+        tooltip.style.top = "-25px"; // Position above the button
+        tooltip.style.left = "50%";
+        tooltip.style.transform = "translateX(-50%)";
+        tooltip.style.backgroundColor = "#333";
+        tooltip.style.color = "#fff";
+        tooltip.style.padding = "5px 10px";
+        tooltip.style.borderRadius = "4px";
+        tooltip.style.fontSize = "12px";
+        tooltip.style.opacity = "0";
+        tooltip.style.transition = "opacity 0.3s ease";
+        tooltip.style.pointerEvents = "none"; // Ensure it doesn't interfere with clicks
+        buttonContainer.appendChild(tooltip);
+
+        // Copy functionality
+        copyButton.addEventListener("click", async () => {
             try {
                 await navigator.clipboard.writeText(url);
+                // Show the tooltip
+                tooltip.style.opacity = "1";
+                tooltip.style.position = "absolute";
+                tooltip.style.top = "0"; // Adjust this value to move it higher or lower
+                tooltip.style.left = "60%"; // Center horizontally
+                tooltip.style.transform = "translateX(-50%)";
+                // Hide the tooltip after 1.5 seconds
+                setTimeout(() => {
+                    tooltip.style.opacity = "0";
+                }, 1500);
             } catch (err) {
                 console.error("Clipboard copy failed:", err);
             }
-
-            window.location.href = url; 
         });
 
-        copyContainer.appendChild(linkElement);
-        copyContainer.appendChild(copyIcon);
-        nameForm.appendChild(copyContainer);
+        const checkButton = document.createElement("button");
+        checkButton.textContent = "Check it Out";
+        checkButton.style.background = "#007bff";
+        checkButton.style.color = "#fff";
+        checkButton.style.border = "none";
+        checkButton.style.padding = "8px 12px";
+        checkButton.style.borderRadius = "5px";
+        checkButton.style.cursor = "pointer";
+        checkButton.style.fontSize = "14px";
+        checkButton.addEventListener("click", () => window.open(url, "_blank"));
+
+        buttonContainer.appendChild(linkElement);
+        buttonContainer.appendChild(copyButton);
+        buttonContainer.appendChild(checkButton);
+        nameForm.appendChild(buttonContainer);
     } else {
         alert("Please enter a name!");
     }
