@@ -1534,7 +1534,7 @@ a[href="/portfolio/AskThemOut"] {
             gap: 1rem;
         }
 
-        .language-flag {
+        .language-flag img{
             width: 32px;
             height: 24px;
             border-radius: 4px;
