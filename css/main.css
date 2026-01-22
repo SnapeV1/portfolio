@@ -1903,6 +1903,10 @@ h5 {
   z-index: 2000;
 }
 
+.modal-backdrop.hidden {
+  display: none;
+}
+
 .modal-card {
   width: min(420px, 100%);
   background: var(--surface);
