@@ -174,6 +174,7 @@ const initAskThemOut = () => {
 
   askThemOutBtn.addEventListener("click", () => {
     namePopup.classList.remove("hidden");
+    namePopup.removeAttribute("hidden");
     namePopup.setAttribute("aria-hidden", "false");
     lastActiveElement = document.activeElement;
     loverNameInput.focus();
@@ -276,6 +277,7 @@ const initAskThemOut = () => {
   namePopup.addEventListener("click", (e) => {
     if (e.target === namePopup) {
       namePopup.classList.add("hidden");
+      namePopup.setAttribute("hidden", "");
       namePopup.setAttribute("aria-hidden", "true");
       if (lastActiveElement) {
         lastActiveElement.focus();
@@ -286,6 +288,7 @@ const initAskThemOut = () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !namePopup.classList.contains("hidden")) {
       namePopup.classList.add("hidden");
+      namePopup.setAttribute("hidden", "");
       namePopup.setAttribute("aria-hidden", "true");
       if (lastActiveElement) {
         lastActiveElement.focus();

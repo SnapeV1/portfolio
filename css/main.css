@@ -1641,6 +1641,10 @@ h5 {
   display: none;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .header {
   backdrop-filter: saturate(180%) blur(10px);
   background-color: transparent;
