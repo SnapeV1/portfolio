@@ -77,7 +77,8 @@
   .nav.open .nav-list {
     position: fixed;
     inset: 0;
-    background-color: #fff;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
     z-index: 1;
     padding: 46px 30px;
     display: flex;
@@ -90,11 +91,11 @@
   }
 
   .nav-link {
-    color: #565a5b;
+    color: var(--nav-text);
   }
 
   .nav-link.active {
-    color: #0c1618;
+    color: var(--text-color);
   }
 
   .nav-btn {
