@@ -1364,7 +1364,7 @@ h1, h2, h3, h4, h5 {
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-lg);
-  padding: var(--space-lg) var(--space-xl);
+  padding: 1.1rem 1.35rem;
   border-bottom: 1px solid var(--c-border);
   transition: background var(--transition);
   cursor: pointer;
@@ -1378,7 +1378,7 @@ h1, h2, h3, h4, h5 {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
+  width: 2.5px;
   background: var(--c-accent);
   transform: scaleY(0);
   transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
@@ -1427,7 +1427,7 @@ h1, h2, h3, h4, h5 {
  
 .current-item-left h3 {
   font-family: var(--f-display);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--c-ink);
   transition: color var(--transition);
@@ -1478,13 +1478,17 @@ h1, h2, h3, h4, h5 {
 }
  
 .current-arrow {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--c-border-strong);
+  padding: 5px;
   color: var(--c-ink-muted);
-  transition: color var(--transition), transform var(--transition);
+  transition: color var(--transition), border-color var(--transition), transform var(--transition);
 }
  
 .current-item:hover .current-arrow {
-  color: var(--c-accent);
-  transform: translate(3px, -3px);
+ color: var(--c-accent);
+  border-color: var(--c-accent);
+  transform: translate(2px, -2px);
 }
