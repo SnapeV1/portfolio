@@ -126,7 +126,7 @@ if (contactForm) {
     const data = new FormData(contactForm);
     try {
       if (typeof emailjs !== 'undefined') {
-        await emailjs.send('service_9ff0soj','template_zl5cp1i',{ from_name: data.get('from_name'), reply_to: data.get('reply_to'), message: data.get('message') });
+        await emailjs.send('service_9ff0soj','template_ut8lftb',{ from_name: data.get('from_name'), reply_to: data.get('reply_to'), message: data.get('message') });
       } else { await new Promise(r => setTimeout(r, 1000)); }
       formStatus.textContent = '✓ Message sent! I\'ll get back to you soon.';
       formStatus.className = 'form-status success';
