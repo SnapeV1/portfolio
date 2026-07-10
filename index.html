@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <meta name="description" content="Amine Ibenhamada — Full-stack developer building secure, scalable web and mobile apps with Spring Boot, Angular, and Flutter." />
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <meta property="og:title" content="Amine Ibenhamada — Developer" />
+  <meta property="og:description" content="Full-stack developer crafting secure, scalable digital experiences." />
+  <meta property="og:image" content="img/hero/hero2.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amine — Developer</title>
@@ -46,8 +59,15 @@
       </div>
     </div>
 
-    <!-- Mobile nav -->
-
+<!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <ul>
+        <li><a href="#home" class="mobile-nav-link">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#current" class="mobile-nav-link">Work</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -458,7 +478,7 @@
             </div>
           </div>
 
-          <form class="contact-form" id="contactForm" novalidate>
+          <form class="contact-form" id="contactForm">
             <div class="form-row">
               <div class="form-field">
                 <label for="contact-name">Name</label>
@@ -490,7 +510,7 @@
     <div class="container">
       <div class="footer-inner">
         <a href="#home" class="footer-logo">Amine.</a>
-        <p class="footer-copy">© 2025 Amine Ibenhamada — Built with care</p>
+        <p class="footer-copy">© 2026 Amine Ibenhamada — Built with care</p>
         <div class="footer-links">
           <a href="https://github.com/SnapeV1" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
           <a href="https://www.linkedin.com/in/amine-ibenhamada-4a5bba15a/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
@@ -504,6 +524,10 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
   </a>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" }); // from emailjs.com dashboard
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

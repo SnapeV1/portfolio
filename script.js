@@ -32,9 +32,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 /* ── Theme ── */
-const themeBtn   = document.getElementById('themeBtn');
-const savedTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
+const themeBtn = document.getElementById('themeBtn');
 themeBtn.addEventListener('click', () => {
   const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
