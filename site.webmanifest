@@ -1,0 +1,14 @@
+{
+  "name": "Amine Ibenhamada — Developer",
+  "short_name": "Amine",
+  "icons": [
+    {
+      "src": "img/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1a6b5a",
+  "background_color": "#f8f5f0",
+  "display": "standalone"
+}
