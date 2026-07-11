@@ -93,6 +93,44 @@ h1, h2, h3, h4, h5 {
   color: var(--c-ink);
 }
 
+/* ── Accessibility: focus states ── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Skip link ── */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: var(--space-sm);
+  z-index: 10000;
+  background: var(--c-accent);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: var(--space-sm);
+}
+
+/* ── Honeypot field (hidden from real users) ── */
+.form-field-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* ── Noise Overlay ── */
 .noise-overlay {
   pointer-events: none;

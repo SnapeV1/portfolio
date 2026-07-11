@@ -120,6 +120,17 @@ const formStatus  = document.getElementById('formStatus');
 if (contactForm) {
   contactForm.addEventListener('submit', async e => {
     e.preventDefault();
+
+    // Honeypot check — if this hidden field is filled, it's almost certainly a bot.
+    // Silently "succeed" without sending, so bots don't learn to look for a different signal.
+    const honeypot = contactForm.querySelector('#company');
+    if (honeypot && honeypot.value.trim() !== '') {
+      formStatus.textContent = '✓ Message sent! I\'ll get back to you soon.';
+      formStatus.className = 'form-status success';
+      contactForm.reset();
+      return;
+    }
+
     const btn = contactForm.querySelector('button[type="submit"]');
     btn.disabled = true; btn.textContent = 'Sending…';
     formStatus.textContent = ''; formStatus.className = 'form-status';

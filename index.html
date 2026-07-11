@@ -7,22 +7,49 @@
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <meta name="description" content="Amine Ibenhamada — Full-stack developer building secure, scalable web and mobile apps with Spring Boot, Angular, and Flutter." />
-  <link rel="icon" href="img/favicon.png" type="image/png" />
-  <meta property="og:title" content="Amine Ibenhamada — Developer" />
-  <meta property="og:description" content="Full-stack developer crafting secure, scalable digital experiences." />
-  <meta property="og:image" content="img/hero/hero2.png" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amine — Developer</title>
+  <title>Amine Ibenhamada — Full-Stack Developer (Spring Boot, Angular, Flutter)</title>
+  <meta name="description" content="Amine Ibenhamada — Full-stack developer building secure, scalable web and mobile apps with Spring Boot, Angular, and Flutter." />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Amine Ibenhamada — Full-Stack Developer" />
+  <meta property="og:description" content="Full-stack developer crafting secure, scalable digital experiences." />
+  <meta property="og:image" content="https://example.com/img/hero/hero2.png" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Amine Ibenhamada",
+    "jobTitle": "Full-Stack Developer",
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://github.com/SnapeV1",
+      "https://www.linkedin.com/in/amine-ibenhamada-4a5bba15a/",
+      "https://www.xing.com/profile/Amine_IbenHamada/"
+    ]
+  }
+  </script>
 </head>
 <body>
+
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Noise overlay -->
   <div class="noise-overlay" aria-hidden="true"></div>
@@ -70,7 +97,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- ─── HERO ─── -->
     <section id="home" class="hero">
@@ -112,7 +139,7 @@
 
           <div class="hero-image-wrap" data-reveal data-reveal-delay="2">
             <div class="hero-image-frame">
-              <img src="img/hero/hero2.png" alt="Portrait of Amine" class="hero-img" fetchpriority="high" />
+              <img src="img/hero/hero2.png" alt="Portrait of Amine" class="hero-img" width="480" height="640" fetchpriority="high" />
               <div class="hero-image-deco" aria-hidden="true"></div>
             </div>
             <div class="hero-badge" aria-hidden="true">
@@ -166,14 +193,14 @@
 </div>
 
 <div class="lang-chip">
-  <span class="lang-flag"><img src="img/Germany-Flag.jpg" alt="Germany flag" width="24" height="18"></span>
+  <span class="lang-flag"><img src="img/germany-flag.jpg" alt="Germany flag" width="24" height="18"></span>
   <span class="lang-name">German</span>
   <span class="lang-level beginner">Beginner</span>
 </div>
               </div>
             </div>
 
-            <a href="File/Resume.pdf" download class="btn btn-primary" style="margin-top:2rem; display:inline-flex; align-items:center; gap:8px;">
+            <a href="file/resume.pdf" download class="btn btn-primary" style="margin-top:2rem; display:inline-flex; align-items:center; gap:8px;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
               Download CV
             </a>
@@ -332,7 +359,7 @@
        <!-- Featured -->
 <div class="featured-project">
   <div class="featured-media">
-    <img src="img/works/SignupScreenshot.png" alt="YEFFA project" loading="lazy" />
+    <img src="img/works/SignupScreenshot.png" alt="YEFFA project" width="800" height="600" loading="lazy" />
     <div class="featured-overlay" aria-hidden="true">
       <span>2025</span>
     </div>
@@ -358,7 +385,7 @@
 
           <article class="project-card" data-index="01">
             <div class="project-card-thumb">
-              <img src="img/works/VitaNova.jpg" alt="VitaNova" loading="lazy" />
+              <img src="img/works/VitaNova.jpg" alt="VitaNova" width="480" height="270" loading="lazy" />
               <div class="project-card-overlay">
                 <a href="https://github.com/SnapeV1/VitaNovaFrontEnd" target="_blank" rel="noopener" aria-label="View VitaNova" class="project-card-link">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -376,7 +403,7 @@
 
           <article class="project-card" data-index="02">
             <div class="project-card-thumb">
-              <img src="img/works/EcoArtWeb.jpg" alt="EcoArt" loading="lazy" />
+              <img src="img/works/EcoArtWeb.jpg" alt="EcoArt" width="480" height="270" loading="lazy" />
               <div class="project-card-overlay">
                 <a href="https://github.com/SnapeV1/EcoArt" target="_blank" rel="noopener" aria-label="View EcoArt" class="project-card-link">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -394,7 +421,7 @@
 
           <article class="project-card" data-index="03">
             <div class="project-card-thumb">
-              <img src="img/icons/wifiQRpng.png" alt="WifiQrCode" loading="lazy" style="object-fit:contain;background:#f4f4f4;padding:2rem"/>
+              <img src="img/icons/wifiQRpng.png" alt="WifiQrCode" width="480" height="270" loading="lazy" style="object-fit:contain;background:#f4f4f4;padding:2rem"/>
               <div class="project-card-overlay">
                 <a href="https://github.com/SnapeV1/WifiQrCodeV0.1" target="_blank" rel="noopener" aria-label="View WifiQrCode" class="project-card-link">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -412,7 +439,7 @@
 
           <article class="project-card" data-index="04">
             <div class="project-card-thumb">
-              <img src="img/works/keylogger2.jpg" alt="KeyLogger" loading="lazy" />
+              <img src="img/works/keylogger2.jpg" alt="KeyLogger" width="480" height="270" loading="lazy" />
               <div class="project-card-overlay">
                 <a href="https://github.com/SnapeV1/SimpleKeyLogger" target="_blank" rel="noopener" aria-label="View KeyLogger" class="project-card-link">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -424,7 +451,7 @@
                 <span>Python</span><span>Security</span>
               </div>
               <h3>KeyLogger</h3>
-              <p>Educational security tool demonstrating keystroke capture mechanics for penetration testing studies.</p>
+              <p>Educational security tool built for a controlled, sandboxed environment to study penetration-testing and keystroke-capture mechanics.</p>
             </div>
           </article>
 
@@ -432,7 +459,7 @@
 
           <article class="project-card" data-index="06">
             <div class="project-card-thumb">
-              <img src="img/works/04.jpg" alt="Portfolio" loading="lazy" />
+              <img src="img/works/04.jpg" alt="Portfolio" width="480" height="270" loading="lazy" />
               <div class="project-card-overlay">
                 <a href="https://github.com/SnapeV1/portfolio.git" target="_blank" rel="noopener" aria-label="View Portfolio" class="project-card-link">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
@@ -479,6 +506,11 @@
           </div>
 
           <form class="contact-form" id="contactForm">
+            <!-- Honeypot field: hidden from real users, bots often fill it in -->
+            <div class="form-field-hp" aria-hidden="true">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+            </div>
             <div class="form-row">
               <div class="form-field">
                 <label for="contact-name">Name</label>
